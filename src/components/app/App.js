@@ -12,10 +12,12 @@ class App extends Component {
       vehicles: [],
     }
   }
-  
+
   render() {
     return (
       <div className="App">
+        <h1> SWAPI-Box </h1>
+        <Button />
         <Container />
       </div>
     );
