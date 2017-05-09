@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 import './button.css';
 
-const Button= () => {
+const Button= ({ handleFetch }) => {
   return (
     <div>
-      <button>people</button>
-      <button>planets</button>
-      <button>vehicles</button>
+      <button onClick={() => handleFetch('people')}>people</button>
+
+      <button onClick={() => handleFetch('planets')}>planets</button>
+
+      <button onClick={() => handleFetch('vehicles')}>vehicles</button>
+
     </div>
   )
 }
