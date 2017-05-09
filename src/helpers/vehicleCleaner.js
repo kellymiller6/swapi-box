@@ -1,4 +1,4 @@
-import data from '../stub/vehicles.json';
+
 
 const vehicleCleaner = (data) => {
     const array = data.results;

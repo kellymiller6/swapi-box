@@ -1,4 +1,4 @@
-import data from '../stub/planets.json';
+
 
 const planetCleaner = (data) => {
   const array = data.results;
