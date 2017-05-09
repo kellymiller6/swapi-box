@@ -7,8 +7,7 @@ const PeopleCard = ({key, data}) => {
   return (
     <div>
       <h3>{data.name}</h3>
-      <Homeworld world={data.homeworld}/>
-      <p>{data.species}</p>
+      <p>{data.homeworld}</p>
     </div>
   )
 }
