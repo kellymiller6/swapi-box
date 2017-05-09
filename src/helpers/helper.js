@@ -3,13 +3,17 @@ import planetCleaner from './planetCleaner'
 import vehicleCleaner from './vehicleCleaner'
 
 const cleaner = (input, obj) => {
-  if (input === 'people') {
-    return peopleCleaner(obj)
-  } else if (input === 'planets') {
-    return planetCleaner(obj)
-  } else if (input === 'vehicles') {
-    return vehicleCleaner(obj)
+  switch(input){
+    case 'people':
+      return peopleCleaner(obj);
+      break;
+    case 'planets':
+      return planetCleaner(obj);
+      break;
+    case 'vehicles':
+      return vehicleCleaner(obj)
+      break;
   }
 }
 
-export default cleaner;
+export default cleaner
