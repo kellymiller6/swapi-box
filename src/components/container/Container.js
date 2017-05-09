@@ -6,9 +6,10 @@ import PeopleCard from '../card/PeopleCard';
 import PropTypes from 'prop-types'
 
 const renderPeople = (categoryData) => {
-  console.log(categoryData)
+  // console.log(categoryData)
   return  Object.keys(categoryData).map((person, index)=> {
-    return <PeopleCard key={index} data={categoryData[person]}/>
+    console.log(categoryData[person]);
+    return <PeopleCard key={index} name={categoryData[person].name} homeworld={categoryData[person].homeworld}/>
   })
 }
 

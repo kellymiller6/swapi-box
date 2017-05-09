@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Homeworld from '../Homeworld/Homeworld';
 
-const PeopleCard = ({key, data}) => {
-  console.log(data)
+const PeopleCard = ({key, name, homeworld}) => {
   return (
     <div>
-      <h3>{data.name}</h3>
-      <p>{data.homeworld}</p>
+      <h3>{name}</h3>
+      <p>{homeworld}</p>
     </div>
   )
 }
