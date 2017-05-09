@@ -16,10 +16,20 @@ class App extends Component {
 
   fetchFunc(input) {
     fetch(`http://swapi.co/api/${input}`)
-      .then((response)=>{return response.json()})
+      .then((response) => response.json())
       .then((obj) => cleaner(input, obj))
-      .then((data)=>{this.setState({category: input, categoryData: data})})
+      .then((data) => this.setState({category: input, categoryData: data}))
   }
+
+  // peopleFetch(input) {
+  //   fetch(`http://swapi.co/api/${input}`)
+  //     .then((response)=>{return response.json()})
+  //     .then((obj) => peopleCleaner(obj))
+  //     .then((people) => this.planetFetch(people.homeworld))
+  //     .then((data)=>{this.setState({category: input, categoryData: data})})
+  // }
+
+
 
   render() {
     return (
