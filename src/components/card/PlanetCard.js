@@ -6,6 +6,9 @@ const PlanetCard = ({name, population, residents, terrain, climate }) => {
     <div>
       <h3>{name}</h3>
       <p>{population}</p>
+      <p>{terrain}</p>
+      <p>{climate}</p>
+      {residents.map(resident => <p>{resident}</p>)}
     </div>
   )
 }

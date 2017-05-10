@@ -6,6 +6,7 @@ const peopleCleaner = (data) => {
       acc[person.name].name = person.name;
       acc[person.name].url = person.url;
       acc[person.name].homeworldUrl = person.homeworld;
+      acc[person.name].speciesUrl = person.species;
     }
     return acc;
   }, {})
@@ -16,28 +17,23 @@ const peopleCleaner = (data) => {
     .then((planet) => {
       if(people[person].homeworldUrl === planet.url) {
             people[person].homeworld = planet.name
+            people[person].population = planet.population
         }
       }
     )
   })
-  // console.log(planets);
 
+  const species = Object.keys(people).map((person) => {
+    fetch(people[person].speciesUrl)
+    .then((response) => response.json())
+    .then((species) => {
+      if(people[person].speciesUrl[0] === species.url) {
+            people[person].species = species.name
+        }
+      }
+    )
+  })
 
-  // console.log(planets);
-//   const world = [fetch(person.homeworld)
-//     .then((response) => response.json())
-//     .then((planet) => {
-//       if(person.homeworld === planet.url) {
-//         acc[person.name].homeworld = planet.name;
-//       }
-//     })
-//     .catch(console.log('world error'))]
-//
-//     Promise.all(world)
-//     .then((worldArray) => console.log(worldArray[0].url))
-//     .then((worldArray) => person.homeworld === worldArray[0].url ? acc[person.name].homeworld = worldArray[0].name : 'undefined')
-//     .catch(console.log('promise.all error'));
-// // console.log(people);
 return people;
 }
 

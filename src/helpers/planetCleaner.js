@@ -22,7 +22,6 @@ const planetCleaner = (data) => {
           planets[planet].residents.push(people.name)
         }
     })
-    console.log('planets', planets)
     })
   })
   return planets;
