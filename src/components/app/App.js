@@ -83,11 +83,12 @@ class App extends Component {
           category={this.state.category}
           favorites={this.state.favorites}
         />
-
+        
         <Container
           people={this.state.people}
           planets={this.state.planets}
           vehicles={this.state.vehicles}
+          // categoryData={this.state.toDisplay}
           category={this.state.category}
           handleFavorite={this.toggleFavorites.bind(this)}
           favorites={this.state.favorites}/>

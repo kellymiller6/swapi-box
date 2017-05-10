@@ -59,7 +59,7 @@ const renderFavorites = (people, planets, vehicles, handleFavorite, favorites) =
         population={object.population}
         handleFavorite={handleFavorite}
         personObject={object}/>
-    } else if (object.type === 'planet')   {
+    } else if (object.type === 'planet') {
       return <PlanetCard
         name={object.name}
         population={object.population}
@@ -69,6 +69,14 @@ const renderFavorites = (people, planets, vehicles, handleFavorite, favorites) =
         handleFavorite={handleFavorite}
         favorites={favorites}
         planetObject={object}/>
+    } else if (object.type === 'vehicle') {
+      return <VehicleCard
+        model={object.model}
+        car_class={object.class}
+        passengers={object.passengers}
+        handleFavorite={handleFavorite}
+        favorites={favorites}
+        vehicleObject={object}/>
     }
     }
   )
