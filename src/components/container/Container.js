@@ -8,9 +8,14 @@ import VehicleCard from '../card/VehicleCard';
 
 
 const renderPeople = (categoryData, handleFavorite) => {
- console.log(categoryData)
  return  Object.keys(categoryData).map((person, index)=> {
-   return <PeopleCard key={index}          name={categoryData[person].name} species={categoryData[person].species} homeworld={categoryData[person].homeworld} handleFavorite={handleFavorite}/>
+   return <PeopleCard
+    key={index}
+    name={categoryData[person].name}
+    species={categoryData[person].species} 
+    homeworld={categoryData[person].homeworld}
+    population={categoryData[person].population}
+    handleFavorite={handleFavorite}/>
  })
 }
 
