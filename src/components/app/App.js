@@ -50,10 +50,9 @@ class App extends Component {
     return Promise.all([people, planets, vehicles, scroll])
   }
 
-  handleClick(state, category){
+  handleClick(category){
     this.setState({
       category: category,
-      toDisplay: state
     })
   }
 
@@ -69,10 +68,6 @@ class App extends Component {
         newFavorites.push(card)
       }
     }
-
-
-
-
     this.setState({favorites : newFavorites})
   }
 
@@ -81,7 +76,7 @@ class App extends Component {
       <div className="App">
         <h1> SWAPI-Box </h1>
         <ScrollCard quote={this.state.scroll} />
-        <Button handleClick={(input, category) => {this.handleClick(input, category)}}
+        <Button handleClick={(category) => {this.handleClick(category)}}
           people={this.state.people}
           planets={this.state.planets}
           vehicles={this.state.vehicles}
@@ -90,7 +85,10 @@ class App extends Component {
         />
 
         <Container
-          categoryData={this.state.toDisplay}
+          people={this.state.people}
+          planets={this.state.planets}
+          vehicles={this.state.vehicles}
+          // categoryData={this.state.toDisplay}
           category={this.state.category}
           handleFavorite={this.toggleFavorites.bind(this)}
           favorites={this.state.favorites}/>
