@@ -6,7 +6,8 @@ const peopleCleaner = (data) => {
       acc[person.name].name = person.name;
       acc[person.name].url = person.url;
       acc[person.name].homeworldUrl = person.homeworld;
-      acc[person.name].speciesUrl = person.species;
+      acc[person.name].speciesUrl = person.species
+      acc[person.name].type='people';
     }
     return acc;
   }, {})

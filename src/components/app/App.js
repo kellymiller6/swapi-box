@@ -20,16 +20,21 @@ class App extends Component {
       vehicles: {},
       scroll: [],
       toDisplay: {},
+      favorites: []
     }
   }
+
 
   componentDidMount() {
     this.createPromise().then((array) => this.setState({
       people: array[0],
       planets: array[1],
       vehicles: array[2],
-      scroll: array[3]
     }));
+    const scroll = fetch('http://swapi.co/api/films/')
+    .then((response) => response.json())
+    .then((filmObj) => filmCleaner(filmObj))
+    .then((scrolls) => this.setState({scroll: scrolls}))
   }
 
   createPromise(){
@@ -42,9 +47,6 @@ class App extends Component {
     const vehicles = fetch('http://swapi.co/api/vehicles/')
       .then((response) => response.json())
       .then((vehicleObj) => vehicleCleaner(vehicleObj))
-    const scroll = fetch('http://swapi.co/api/films/')
-      .then((response) => response.json())
-      .then((filmObj) => filmCleaner(filmObj))
     return Promise.all([people, planets, vehicles, scroll])
   }
 
@@ -55,27 +57,42 @@ class App extends Component {
     })
   }
 
-  displayScroll(){
-    const min = Math.ceil(0);
-    const max = Math.floor(this.state.scroll.length)
-    return this.state.scroll[Math.floor(Math.random()*(max-min))+max]
+  toggleFavorites(card){
+    const newFavorites = [...this.state.favorites]
+    if(!newFavorites.length){
+      console.log(newFavorites);
+      newFavorites.push(card)
+    } else {
+      newFavorites.map(favorite => {
+        if(!favorite.name === card.name){
+          newFavorites.push(card)
+        } else {
+          const index = newFavorites.indexOf(card.name)
+          newFavorites.splice(index, 1)
+        }
+      })
+  }
+    this.setState({favorites : newFavorites})
   }
 
   render() {
     return (
       <div className="App">
         <h1> SWAPI-Box </h1>
-        <ScrollCard quote={this.state.scroll}/>
+        <ScrollCard quote={this.state.scroll} />
         <Button handleClick={(input, category) => {this.handleClick(input, category)}}
           people={this.state.people}
           planets={this.state.planets}
           vehicles={this.state.vehicles}
           category={this.state.category}
+          favorites={this.state.favorites}
         />
 
         <Container
           categoryData={this.state.toDisplay}
-          category={this.state.category}/>
+          category={this.state.category}
+          handleFavorite={this.toggleFavorites.bind(this)}
+          favorites={this.state.favorites}/>
       </div>
     );
   }
