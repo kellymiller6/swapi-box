@@ -5,13 +5,13 @@ import './button.css';
 const Button= ({ handleClick, people, planets, vehicles, category, favorites }) => {
   return (
     <div>
-      <button onClick={() => handleClick(people, 'people')}>people</button>
+      <button onClick={() => handleClick('people')}>people</button>
 
-      <button onClick={() => handleClick(planets, 'planets')}>planets</button>
+      <button onClick={() => handleClick('planets')}>planets</button>
 
-      <button onClick={() => handleClick(vehicles, 'vehicles')}>vehicles</button>
+      <button onClick={() => handleClick('vehicles')}>vehicles</button>
 
-      <button onClick={() => handleClick(favorites, 'favorites')}>View favorites</button>
+      <button onClick={() => handleClick('favorite')}>View favorites</button>
 
     </div>
   )
