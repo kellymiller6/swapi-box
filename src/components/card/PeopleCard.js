@@ -5,9 +5,9 @@ const PeopleCard = ({personObject, name, homeworld, species, population, handleF
   return (
     <div>
       <h3>{name}</h3>
-      <p>{species}</p>
-      <p>{homeworld}</p>
-      <p>{population}</p>
+      <p>Species: {species}</p>
+      <p>Homeworld: {homeworld}</p>
+      <p>Population: {population}</p>
       <button className='favorite'
               onClick={(e) => handleFavorite(personObject)}>
               Favorite
