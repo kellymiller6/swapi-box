@@ -2,7 +2,6 @@
 
 const vehicleCleaner = (data) => {
     const array = data.results;
-    // console.log(array);
     const vehicles =  array.reduce((acc, vehicle) => {
       if(!acc[vehicle.name]) {
         acc[vehicle.name] = {model: vehicle.model, class: vehicle.vehicle_class, passengers: vehicle.passengers}

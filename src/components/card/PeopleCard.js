@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Homeworld from '../Homeworld/Homeworld';
+import React from 'react';
+// import PropTypes from 'prop-types';
 
 const PeopleCard = ({key, name, homeworld}) => {
   return (
