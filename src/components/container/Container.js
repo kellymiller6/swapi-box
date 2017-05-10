@@ -40,6 +40,7 @@ const renderVehicles = (vehicles, handleFavorite, favorites) => {
  return Object.keys(vehicles).map((vehicle, index)=>{
    return <VehicleCard
      key={index}
+     name={vehicles[vehicle].name}
      model={vehicles[vehicle].model}
      car_class={vehicles[vehicle].class}
      passengers={vehicles[vehicle].passengers}
