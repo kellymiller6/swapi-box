@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types'
+import React from 'react';
+// import PropTypes from 'prop-types'
 import './button.css';
 
-const Button= ({ handleFetch }) => {
+const Button= ({ handleClick, people, planets, vehicles, category }) => {
   return (
     <div>
-      <button onClick={() => handleFetch('people')}>people</button>
+      <button onClick={() => handleClick(people, 'people')}>people</button>
 
-      <button onClick={() => handleFetch('planets')}>planets</button>
+      <button onClick={() => handleClick(planets, 'planets')}>planets</button>
 
-      <button onClick={() => handleFetch('vehicles')}>vehicles</button>
+      <button onClick={() => handleClick(vehicles, 'vehicles')}>vehicles</button>
 
     </div>
   )
@@ -18,6 +18,6 @@ const Button= ({ handleFetch }) => {
 export default Button;
 
 
-Button.Proptypes = {
-
-}
+// Button.Proptypes = {
+//
+// }
