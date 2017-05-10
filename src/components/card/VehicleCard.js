@@ -5,7 +5,7 @@ const VehicleCard = ({vehicleObject, name, model, car_class, passengers, handleF
  return(
    <div className='card'>
      <h3>{name}</h3>
-     <p>Model: {model}</h3>
+     <p>Model: {model}</p>
      <p>Class: {car_class}</p>
      <p>Number of passengers: {passengers}</p>
  <button className='favorite'
