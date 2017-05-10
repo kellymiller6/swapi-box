@@ -20,6 +20,7 @@ class App extends Component {
       vehicles: {},
       scroll: [],
       toDisplay: {},
+      favorites: []
     }
   }
 
@@ -56,21 +57,42 @@ class App extends Component {
     })
   }
 
+  toggleFavorites(card){
+    const newFavorites = [...this.state.favorites]
+    if(!newFavorites.length){
+      console.log(newFavorites);
+      newFavorites.push(card)
+    } else {
+      newFavorites.map(favorite => {
+        if(!favorite.name === card.name){
+          newFavorites.push(card)
+        } else {
+          const index = newFavorites.indexOf(card.name)
+          newFavorites.splice(index, 1)
+        }
+      })
+  }
+    this.setState({favorites : newFavorites})
+  }
+
   render() {
     return (
       <div className="App">
         <h1> SWAPI-Box </h1>
-        <ScrollCard quote={this.state.scroll} randomScroll={this.displayScroll.bind(this)}/>
+        <ScrollCard quote={this.state.scroll} />
         <Button handleClick={(input, category) => {this.handleClick(input, category)}}
           people={this.state.people}
           planets={this.state.planets}
           vehicles={this.state.vehicles}
           category={this.state.category}
+          favorites={this.state.favorites}
         />
 
         <Container
           categoryData={this.state.toDisplay}
-          category={this.state.category}/>
+          category={this.state.category}
+          handleFavorite={this.toggleFavorites.bind(this)}
+          favorites={this.state.favorites}/>
       </div>
     );
   }
