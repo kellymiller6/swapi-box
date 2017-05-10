@@ -1,7 +1,7 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 
-const PeopleCard = ({personObject, key, name, homeworld, species, population, handleFavorite}) => {
+const PeopleCard = ({personObject, name, homeworld, species, population, handleFavorite}) => {
   return (
     <div>
       <h3>{name}</h3>

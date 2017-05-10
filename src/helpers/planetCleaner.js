@@ -8,6 +8,7 @@ const planetCleaner = (data) => {
       acc[planet.name].climate = planet.climate
       acc[planet.name].residentUrl = planet.residents
       acc[planet.name].name = planet.name
+      acc[planet.name].type='planet'
     }
     return acc;
   }, {})

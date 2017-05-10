@@ -11,7 +11,7 @@ const renderPeople = (people, handleFavorite, favorites) => {
   // console.log(people);
  return  Object.keys(people).map((person, index)=> {
    return <PeopleCard
-     key={index}
+
      name={people[person].name}
      species={people[person].species}
      homeworld={people[person].homeworld}
@@ -49,25 +49,29 @@ const renderVehicles = (vehicles, handleFavorite, favorites) => {
  })
 }
 
-const renderFavorites = (category, people, planets, vehicles, handleFavorite, favorites) => {
-  favorites.map(object => {
-    console.log(object);
+const renderFavorites = (people, planets, vehicles, handleFavorite, favorites) => {
+  return favorites.map(object => {
     if(object.type === 'people'){
       return <PeopleCard
-        // key={index}
         name={object.name}
         species={object.species}
         homeworld={object.homeworld}
         population={object.population}
         handleFavorite={handleFavorite}
-        favorites={favorites}
         personObject={object}/>
-    } else if(object.type === 'planets'){
-      return renderPlanets(planets, handleFavorite, favorites);
-    } else if (object.type === 'vehicles'){
-      return renderVehicles(vehicles, handleFavorite, favorites);
+    } else if (object.type === 'planet')   {
+      return <PlanetCard
+        name={object.name}
+        population={object.population}
+        residents={object.residents}
+        terrain={object.terrain}
+        climate={object.climate}
+        handleFavorite={handleFavorite}
+        favorites={favorites}
+        planetObject={object}/>
     }
-  })
+    }
+  )
 }
 
 const renderCards = (category, people, planets, vehicles, handleFavorite, favorites )=>{
@@ -82,7 +86,7 @@ const renderCards = (category, people, planets, vehicles, handleFavorite, favori
       return renderVehicles(vehicles, handleFavorite, favorites);
       break;
     case 'favorite':
-    return renderFavorites(category, people, planets, vehicles, handleFavorite, favorites)
+      return renderFavorites(people, planets, vehicles, handleFavorite, favorites)
   }
 }
 
