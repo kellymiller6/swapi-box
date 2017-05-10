@@ -59,19 +59,20 @@ class App extends Component {
 
   toggleFavorites(card){
     const newFavorites = [...this.state.favorites]
-    if(!newFavorites.length){
-      console.log(newFavorites);
+    if(!newFavorites.length) {
       newFavorites.push(card)
     } else {
-      newFavorites.map(favorite => {
-        if(!favorite.name === card.name){
-          newFavorites.push(card)
-        } else {
-          const index = newFavorites.indexOf(card.name)
-          newFavorites.splice(index, 1)
-        }
-      })
-  }
+      if(newFavorites.includes(card)){
+        const index = newFavorites.indexOf(card);
+        newFavorites.splice(index, 1)
+      } else {
+        newFavorites.push(card)
+      }
+    }
+
+
+
+
     this.setState({favorites : newFavorites})
   }
 
