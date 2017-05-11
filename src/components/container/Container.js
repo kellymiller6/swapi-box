@@ -7,23 +7,23 @@ import PropTypes from 'prop-types'
 
 
 
-const renderPeople = (people, handleFavorite, favoriteClass, favorites) => {
-  // console.log(people);
+const renderPeople = (people, handleFavorite, favorites) => {
+  // console.log('pplfav', favorites);
  return  Object.keys(people).map((person, index)=> {
    return <PeopleCard
-
+      key={index}
      name={people[person].name}
      species={people[person].species}
      homeworld={people[person].homeworld}
      population={people[person].population}
      handleFavorite={handleFavorite}
      favorites={favorites}
-     favoriteClass={favoriteClass}
      personObject={people[person]}/>
  })
 }
 
-const renderPlanets = (planets, handleFavorite, favoriteClass, favorites) => {
+const renderPlanets = (planets, handleFavorite, favorites) => {
+  // console.log('plntfav', favorites);
  return Object.keys(planets).map((planet, index)=>{
    return <PlanetCard key={index}
      name={planets[planet].name}
@@ -32,13 +32,13 @@ const renderPlanets = (planets, handleFavorite, favoriteClass, favorites) => {
      terrain={planets[planet].terrain}
      climate={planets[planet].climate}
      handleFavorite={handleFavorite}
-     favoriteClass={favoriteClass}
      favorites={favorites}
      planetObject={planets[planet]}/>
  })
 }
 
-const renderVehicles = (vehicles, handleFavorite, favoriteClass, favorites) => {
+const renderVehicles = (vehicles, handleFavorite,favorites) => {
+  // console.log('vehfav', favorites);
  return Object.keys(vehicles).map((vehicle, index)=>{
    return <VehicleCard
      key={index}
@@ -47,14 +47,12 @@ const renderVehicles = (vehicles, handleFavorite, favoriteClass, favorites) => {
      car_class={vehicles[vehicle].class}
      passengers={vehicles[vehicle].passengers}
      handleFavorite={handleFavorite}
-     favoriteClass={favoriteClass}
      favorites={favorites}
      vehicleObject={vehicles[vehicle]}/>
  })
 }
 
-const renderFavorites = (category, people, planets, vehicles, handleFavorite, favoriteClass, favorites) => {
-  console.log(favorites);
+const renderFavorites = (people, planets, vehicles, favorites, handleFavorite) => {
   return favorites.map(object => {
     if(object.type === 'people'){
       return <PeopleCard
@@ -63,7 +61,7 @@ const renderFavorites = (category, people, planets, vehicles, handleFavorite, fa
         homeworld={object.homeworld}
         population={object.population}
         handleFavorite={handleFavorite}
-        favoriteClass={favoriteClass}
+        favorites={favorites}
         personObject={object}/>
     } else if (object.type === 'planet') {
       return <PlanetCard
@@ -73,7 +71,6 @@ const renderFavorites = (category, people, planets, vehicles, handleFavorite, fa
         terrain={object.terrain}
         climate={object.climate}
         handleFavorite={handleFavorite}
-        favoriteClass={favoriteClass}
         favorites={favorites}
         planetObject={object}/>
     } else if (object.type === 'vehicle') {
@@ -83,7 +80,6 @@ const renderFavorites = (category, people, planets, vehicles, handleFavorite, fa
         car_class={object.class}
         passengers={object.passengers}
         handleFavorite={handleFavorite}
-        favoriteClass={favoriteClass}
         favorites={favorites}
         vehicleObject={object}/>
     }
@@ -91,26 +87,27 @@ const renderFavorites = (category, people, planets, vehicles, handleFavorite, fa
   )
 }
 
-const renderCards = (category, people, planets, vehicles, handleFavorite, favoriteClass, favorites )=>{
+const renderCards = (category, people, planets, vehicles, handleFavorite, favorites )=>{
+  // console.log(category)
   switch(category){
     case 'people':
-      return renderPeople(people, handleFavorite, favoriteClass, favorites);
+      return renderPeople(people, handleFavorite, favorites);
       break;
     case'planets':
-      return renderPlanets(planets, handleFavorite, favoriteClass, favorites);
+      return renderPlanets(planets, handleFavorite, favorites);
       break;
     case 'vehicles':
-      return renderVehicles(vehicles, handleFavorite, favoriteClass, favorites);
+      return renderVehicles(vehicles, handleFavorite, favorites);
       break;
-    case 'favorite':
-      return renderFavorites(people, planets, vehicles, handleFavorite, favoriteClass, favorites)
+    case 'fav':
+      return renderFavorites(people, planets, vehicles, favorites, handleFavorite);
   }
 }
 
-const Container = ({ category, people, planets, vehicles, handleFavorite, favoriteClass, favorites }) => {
+const Container = ({ category, people, planets, vehicles, handleFavorite, favorites }) => {
  return (
    <div className='container'>
-     {renderCards(category, people, planets, vehicles, handleFavorite, favoriteClass, favorites)}
+     {renderCards(category, people, planets, vehicles, handleFavorite, favorites)}
    </div>
  )
 }
@@ -120,12 +117,11 @@ export default Container;
 
 
 Container.propTypes = {
-  category: PropTypes.string,
+  // category: PropTypes.string,
   people: PropTypes.object,
   planets: PropTypes.object,
   vehicles: PropTypes.object,
-  population: PropTypes.string,
+  // population: PropTypes.string,
   handleFavorite: PropTypes.func,
-  favoriteClass: PropTypes.func,
   favorites: PropTypes.array
 }
