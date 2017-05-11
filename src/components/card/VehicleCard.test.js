@@ -5,7 +5,15 @@ import VehicleCard from './VehicleCard';
 describe('VehicleCard Tests', () => {
   let wrapper;
     beforeEach(() => {
-      wrapper = shallow(<VehicleCard model={'Luke'} car_class={'human'} passengers={100}/>)
+      wrapper = shallow(<VehicleCard
+        name={'name'}
+        model={'model'}
+        car_class={'carclass'}
+        passengers={'passengers'}
+        handleFavorite={'handleFavorite'}
+        favorites={[]}
+        vehicleObject={{}}
+        />)
     })
 
     test('vehicle card generates two cards', () => {

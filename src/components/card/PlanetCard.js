@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import favoriteClass from '../../helpers/favoriteClass';
 
 const PlanetCard = ({planetObject, name, population, residents, terrain, climate, handleFavorite, favorites }) => {
-  
+
   let favClass = favoriteClass(name, favorites);
   return (
-    <div className={`card vehicle-card ${favClass}`} >
+    <div className={`card planet-card ${favClass}`} >
       <h3>{name}</h3>
       <p>Population: {population}</p>
       <p>Terrain: {terrain}</p>
