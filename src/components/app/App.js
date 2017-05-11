@@ -74,23 +74,27 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1> SWAPI-Box </h1>
-        <ScrollCard quote={this.state.scroll} />
-        <Button handleClick={(category) => {this.handleClick(category)}}
-          people={this.state.people}
-          planets={this.state.planets}
-          vehicles={this.state.vehicles}
-          category={this.state.category}
-          favorites={this.state.favorites}
-        />
-        
-        <Container
-          people={this.state.people}
-          planets={this.state.planets}
-          vehicles={this.state.vehicles}
-          category={this.state.category}
-          handleFavorite={this.toggleFavorites.bind(this)}
-          favorites={this.state.favorites}/>
+        <aside className='scroll-wrapper'>
+          <ScrollCard quote={this.state.scroll} />
+        </aside>
+        <section className='main-wrapper'>
+          <h1> SWAPI-Box </h1>
+          <Button handleClick={(category) => {this.handleClick(category)}}
+            people={this.state.people}
+            planets={this.state.planets}
+            vehicles={this.state.vehicles}
+            category={this.state.category}
+            favorites={this.state.favorites}
+          />
+
+          <Container
+            people={this.state.people}
+            planets={this.state.planets}
+            vehicles={this.state.vehicles}
+            category={this.state.category}
+            handleFavorite={this.toggleFavorites.bind(this)}
+            favorites={this.state.favorites}/>
+        </section>
       </div>
     );
   }

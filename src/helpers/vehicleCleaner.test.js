@@ -1,5 +1,5 @@
 import vehicleCleaner from './vehicleCleaner';
-import data from '../stub/people.json';
+import data from '../stub/vehicles.json';
 
 describe('vehicleCleaner tests', () => {
   test.skip('vehicleCleaner is a function', () => {
@@ -14,5 +14,10 @@ describe('vehicleCleaner tests', () => {
   test.skip('vehicleCleaner returns 10 people objects', () => {
     const cleanData = vehicleCleaner(data)
     expect(Object.keys(cleanData).length).toEqual(10)
+  })
+
+  test.skip('vehicleCleaner returns Sand Crawler as first key', () => {
+    const cleanData = vehicleCleaner(data)
+    expect(Object.keys(cleanData)[0]).toEqual('Sand Crawler')
   })
 })

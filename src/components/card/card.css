@@ -1,0 +1,17 @@
+.card{
+  border: 1px black solid;
+  height: 300px;
+  width: 300px;
+  margin: 20px;
+  background-color: #003366;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.favorite {
+  max-width: 33%;
+  text-align: center;
+  margin: auto
+}

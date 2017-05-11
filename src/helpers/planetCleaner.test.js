@@ -15,4 +15,9 @@ describe('planetCleaner tests', () => {
     const cleanData = planetCleaner(data)
     expect(Object.keys(cleanData).length).toEqual(10)
   })
+
+  test.skip('planetCleaner returns Alderaan as first key', () => {
+    const cleanData = planetCleaner(data)
+    expect(Object.keys(cleanData)[0]).toEqual('Alderaan')
+  })
 })

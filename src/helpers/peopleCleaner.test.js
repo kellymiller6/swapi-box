@@ -15,4 +15,9 @@ describe('peopleCleaner tests', () => {
     const cleanData = peopleCleaner(data)
     expect(Object.keys(cleanData).length).toEqual(10)
   })
+
+  test.skip('peopleCleaner returns Luke Skywalker as first key', () => {
+    const cleanData = peopleCleaner(data)
+    expect(Object.keys(cleanData)[0]).toEqual('Luke Skywalker')
+  })
 })

@@ -1,0 +1,10 @@
+button {
+  font-family: 'Oswald', sans-serif;
+  height: 50px;
+  min-width: 100px;
+  margin: 20px;
+  font-size: 1.5em;
+  background-color: #046E8F;
+  border: none;
+  padding: 5px;
+}

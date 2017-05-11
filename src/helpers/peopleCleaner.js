@@ -34,7 +34,7 @@ const peopleCleaner = (data) => {
       }
     )
   })
-
+  
 return people;
 }
 
