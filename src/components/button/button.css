@@ -4,7 +4,8 @@ button {
   min-width: 100px;
   margin: 20px;
   font-size: 1.5em;
-  background-color: #046E8F;
+  background-color: black;
+  color: yellow;
   border: none;
   padding: 5px;
 }
