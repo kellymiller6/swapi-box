@@ -8,10 +8,9 @@ import PropTypes from 'prop-types'
 
 
 const renderPeople = (people, handleFavorite, favorites) => {
-  // console.log('pplfav', favorites);
  return  Object.keys(people).map((person, index)=> {
    return <PeopleCard
-      key={index}
+     key={index}
      name={people[person].name}
      species={people[person].species}
      homeworld={people[person].homeworld}
@@ -23,7 +22,6 @@ const renderPeople = (people, handleFavorite, favorites) => {
 }
 
 const renderPlanets = (planets, handleFavorite, favorites) => {
-  // console.log('plntfav', favorites);
  return Object.keys(planets).map((planet, index)=>{
    return <PlanetCard key={index}
      name={planets[planet].name}
@@ -38,7 +36,6 @@ const renderPlanets = (planets, handleFavorite, favorites) => {
 }
 
 const renderVehicles = (vehicles, handleFavorite,favorites) => {
-  // console.log('vehfav', favorites);
  return Object.keys(vehicles).map((vehicle, index)=>{
    return <VehicleCard
      key={index}
