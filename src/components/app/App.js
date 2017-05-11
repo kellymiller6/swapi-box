@@ -56,8 +56,6 @@ class App extends Component {
     })
   }
 
-
-
   toggleFavorites(card){
     const newFavorites = [...this.state.favorites]
     if(!newFavorites.length) {
