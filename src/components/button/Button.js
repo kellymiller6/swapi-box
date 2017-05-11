@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import './button.css';
 
 const Button= ({ handleClick, people, planets, vehicles, category, favorites }) => {
@@ -20,6 +20,11 @@ const Button= ({ handleClick, people, planets, vehicles, category, favorites }) 
 export default Button;
 
 
-// Button.Proptypes = {
-//
-// }
+Button.propTypes = {
+  handleClick: PropTypes.func,
+  people: PropTypes.string,
+  planets: PropTypes.string,
+  vehicles: PropTypes.string,
+  category: PropTypes.string,
+  favorites: PropTypes.array
+}

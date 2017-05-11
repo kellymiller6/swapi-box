@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './card.css';
-
 import PropTypes from 'prop-types';
 
 const VehicleCard = ({vehicleObject, name, model, car_class, passengers, handleFavorite, favoriteClass, favorites}) => {
@@ -20,3 +19,14 @@ const VehicleCard = ({vehicleObject, name, model, car_class, passengers, handleF
 }
 
 export default VehicleCard;
+
+VehicleCard.propTypes = {
+  vehicleObject: PropTypes.object,
+  name: PropTypes.string,
+  model: PropTypes.string,
+  car_class: PropTypes.string,
+  passengers: PropTypes.string,
+  handleFavorite: PropTypes.func,
+  favoriteClass: PropTypes.func,
+  favorites: PropTypes.array
+}
