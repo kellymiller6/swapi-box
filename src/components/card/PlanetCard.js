@@ -10,7 +10,7 @@ const PlanetCard = ({planetObject, name, population, residents, terrain, climate
       <p>Population: {population}</p>
       <p>Terrain: {terrain}</p>
       <p>Climate: {climate}</p>
-      {residents.map(resident => <p>Resident: {resident}</p>)}
+      <p>Residents:</p>{residents.map(resident => <span>{resident} </span>)}
       <button className='favorite'
         onClick={(e) => handleFavorite(planetObject)}>
         Favorite

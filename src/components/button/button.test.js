@@ -23,5 +23,23 @@ describe('Button Tests', ()=>{
     expect(wrapper.find('button').length).toEqual(4)
   })
 
+})
+describe('Button Tests', ()=>{
+  let mockFn = jest.fn()
+  let wrapper;
+  beforeEach(()=> {
+    wrapper = shallow(<Button handleClick={mockFn}
+      people={{}}
+      planets={{}}
+      vehicles={{}}
+      category={'category'}
+      favorites={['a', 'b']}
+      />)
+  })
+
+  test('on click button will call a function', () => {
+    wrapper.find('.ppl-btn').simulate('click');
+    expect(mockFn).toHaveBeenCalledTimes(1);
+  })
 
 })
