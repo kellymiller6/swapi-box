@@ -25,7 +25,6 @@ const planetCleaner = (data) => {
     })
     })
   })
-  console.log(planets);
   return planets;
 }
 
