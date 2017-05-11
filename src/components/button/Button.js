@@ -6,7 +6,7 @@ const Button= ({ handleClick, people, planets, vehicles, category, favorites }) 
   return (
     <div className='buttons'>
 
-      <button onClick={() => handleClick('people')}>people</button>
+      <button className='ppl-btn' onClick={() => handleClick('people')}>people</button>
 
       <button onClick={() => handleClick('planets')}>planets</button>
 

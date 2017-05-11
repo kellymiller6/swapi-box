@@ -6,11 +6,14 @@ describe('PlanetCard Tests', ()=>{
   let wrapper;
   beforeEach(()=> {
     wrapper = shallow(<PlanetCard
-      name={'Alderaan'}
-      population={'2000000000'}
-      terrain={'grasslands, mountains'}
-      climate={'temperate'}
+      name={'name'}
+      population={'population'}
       residents={[]}
+      terrain={'terrain'}
+      climate={'climate'}
+      handleFavorite={'handleFavorite'}
+      favorites={[]}
+      planetObject={{}}
       />)
 
   })
