@@ -3,9 +3,10 @@ import './card.css';
 
 // import PropTypes from 'prop-types';
 
-const PlanetCard = ({planetObject, name, population, residents, terrain, climate, handleFavorite }) => {
+const PlanetCard = ({planetObject, name, population, residents, terrain, climate, handleFavorite, favoriteClass, favorites }) => {
+  let favClass = favoriteClass(name, favorites);
   return (
-    <div className='planet-card card' >
+    <div className={`card planet-card ${favClass}`} >
       <h3>{name}</h3>
       <p>Population: {population}</p>
       <p>Terrain: {terrain}</p>
