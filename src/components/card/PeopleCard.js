@@ -1,12 +1,15 @@
 import React from 'react';
 import './card.css';
 import PropTypes from 'prop-types';
+import favoriteClass from '../../helpers/favoriteClass'
+
+const PeopleCard = ({personObject, name, homeworld, species, population, handleFavorite, favorites}) => {
 
 
-const PeopleCard = ({personObject, name, homeworld, species, population, handleFavorite, favoriteClass, favorites}) => {
-// let favClass = favoriteClass(name, favorites);
+let favClass = favoriteClass(name, favorites);
+console.log(favClass);
   return (
-    <div className={`card people-card `}>
+    <div className={`card people-card ${favClass}`}>
       <h3>{name}</h3>
       <p>Species: {species}</p>
       <p>Homeworld: {homeworld}</p>

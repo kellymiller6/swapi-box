@@ -56,22 +56,7 @@ class App extends Component {
     })
   }
 
-  favoriteClass(name, favorites) {
-      if (this.state.favorites.length === 0) {
-        // console.log('empty string');
-        return ""
-      } else if (this.state.favorites.length) {
-        // console.log('not empty');
-        let match = this.state.favorites.find((val) => {
-          // console.log(val.name);
-          return val.name === name
-        })
-        if (match) {
-          // console.log('matches');
-          return 'selected'
-        }
-      }
-    }
+
 
   toggleFavorites(card){
     const newFavorites = [...this.state.favorites]
@@ -110,7 +95,6 @@ class App extends Component {
             vehicles={this.state.vehicles}
             category={this.state.category}
             handleFavorite={this.toggleFavorites.bind(this)}
-            favoriteClass={this.favoriteClass.bind(this)}
             favorites={this.state.favorites}/>
         </section>
       </div>
