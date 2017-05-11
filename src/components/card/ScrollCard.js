@@ -11,3 +11,7 @@ const ScrollCard = ({quote}) => {
 }
 
 export default ScrollCard;
+
+ScrollCard.propTypes = {
+  quotes: PropTypes.array
+}

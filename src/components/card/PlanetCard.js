@@ -1,12 +1,11 @@
 import React from 'react';
 import './card.css';
+import PropTypes from 'prop-types';
 
-// import PropTypes from 'prop-types';
-
-const PlanetCard = ({planetObject, name, population, residents, terrain, climate, handleFavorite, favoriteClass, favorites }) => {
-  let favClass = favoriteClass(name, favorites);
+const PlanetCard = ({planetObject, name, population, residents, terrain, climate, handleFavorite,  favorites }) => {
+  // let favClass = favoriteClass(name, favorites);
   return (
-    <div className={`card planet-card ${favClass}`} >
+    <div className={`card planet-card `} >
       <h3>{name}</h3>
       <p>Population: {population}</p>
       <p>Terrain: {terrain}</p>
@@ -21,3 +20,15 @@ const PlanetCard = ({planetObject, name, population, residents, terrain, climate
 }
 
 export default PlanetCard;
+
+PlanetCard.propTypes = {
+  planetObject: PropTypes.object,
+  name: PropTypes.string,
+  population: PropTypes.string,
+  residents: PropTypes.string,
+  terrain: PropTypes.string,
+  climate: PropTypes.string,
+  handleFavorite: PropTypes.func,
+  favoriteClass: PropTypes.func,
+  favorites: PropTypes.array
+}
