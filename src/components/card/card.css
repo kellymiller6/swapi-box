@@ -17,3 +17,13 @@
   margin: auto;
   margin-top: 5px;
 }
+
+.selected {
+  background-color: black;
+  color: yellow;
+}
+
+.selected button {
+  background-color: yellow;
+  color: black;
+}
