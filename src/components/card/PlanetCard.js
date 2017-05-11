@@ -5,7 +5,7 @@ import './card.css';
 
 const PlanetCard = ({planetObject, name, population, residents, terrain, climate, handleFavorite }) => {
   return (
-    <div className='card'>
+    <div className='planet-card card' >
       <h3>{name}</h3>
       <p>Population: {population}</p>
       <p>Terrain: {terrain}</p>
