@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './card.css';
+
 import PropTypes from 'prop-types';
 
 const VehicleCard = ({vehicleObject, model, car_class, passengers, handleFavorite}) => {

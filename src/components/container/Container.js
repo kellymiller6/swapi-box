@@ -1,8 +1,8 @@
 import React from 'react';
-// import Card from '../card/Card';
 import PeopleCard from '../card/PeopleCard';
 import PlanetCard from '../card/PlanetCard';
 import VehicleCard from '../card/VehicleCard';
+import './container.css';
 // import PropTypes from 'prop-types'
 
 
