@@ -4,7 +4,7 @@ import './button.css';
 
 const Button= ({ handleClick, people, planets, vehicles, category, favorites }) => {
   return (
-    <div>
+    <div className='buttons'>
       <button onClick={() => handleClick('people')}>people</button>
 
       <button onClick={() => handleClick('planets')}>planets</button>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const PlanetCard = ({planetObject, name, population, residents, terrain, climate, handleFavorite }) => {
   return (
-    <div >
+    <div className='planet-card' >
       <h3>{name}</h3>
       <p>Population: {population}</p>
       <p>Terrain: {terrain}</p>
