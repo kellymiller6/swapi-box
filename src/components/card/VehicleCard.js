@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-const VehicleCard = ({vehicleObject, name, model, car_class, passengers, handleFavorite}) => {
+const VehicleCard = ({vehicleObject, model, car_class, passengers, handleFavorite}) => {
  return(
    <div className='card'>
-     <h3>{name}</h3>
-     <p>Model: {model}</p>
-     <p>Class: {car_class}</p>
-     <p>Number of passengers: {passengers}</p>
- <button className='favorite'
+     <h3>{model}</h3>
+     <p>{car_class}</p>
+     <p>{passengers}</p>
+     <button className='favorite'
          onClick={(e) => handleFavorite(vehicleObject)}>
          Favorite
          </button>
