@@ -8,11 +8,11 @@ const Button= ({ handleClick, people, planets, vehicles, category, favorites }) 
 
       <button className='ppl-btn' onClick={() => handleClick('people')}>people</button>
 
-      <button onClick={() => handleClick('planets')}>planets</button>
+      <button className='plnt-btn' onClick={() => handleClick('planets')}>planets</button>
 
-      <button onClick={() => handleClick('vehicles')}>vehicles</button>
+      <button className='veh-btn' onClick={() => handleClick('vehicles')}>vehicles</button>
 
-      <button onClick={() => handleClick('fav')}>View favorites </button>
+      <button className='fav-btn' onClick={() => handleClick('fav')}>View favorites </button>
 
     </div>
   )

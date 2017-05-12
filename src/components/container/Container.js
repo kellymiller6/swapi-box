@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 const renderPeople = (people, handleFavorite, favorites) => {
  return  Object.keys(people).map((person, index)=> {
    return <PeopleCard
+    id={people[person].name}
      key={index}
      name={people[person].name}
      species={people[person].species}
