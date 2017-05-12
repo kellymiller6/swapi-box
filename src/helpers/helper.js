@@ -1,9 +1,9 @@
-import peopleCleaner from './peopleCleaner'
-import planetCleaner from './planetCleaner'
-import vehicleCleaner from './vehicleCleaner'
+import peopleCleaner from './peopleCleaner';
+import planetCleaner from './planetCleaner';
+import vehicleCleaner from './vehicleCleaner';
 
 const cleaner = (input, obj) => {
-  switch(input){
+  switch (input) {
     case 'people':
       return peopleCleaner(obj);
       break;
@@ -11,9 +11,9 @@ const cleaner = (input, obj) => {
       return planetCleaner(obj);
       break;
     case 'vehicles':
-      return vehicleCleaner(obj)
+      return vehicleCleaner(obj);
       break;
   }
-}
+};
 
-export default cleaner
+export default cleaner;

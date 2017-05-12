@@ -23,13 +23,14 @@ class App extends Component {
     };
   }
 
-
   componentDidMount() {
     this.createPromise().then(array => this.setState({
       people: array[0],
       planets: array[1],
       vehicles: array[2],
-    }));
+    }),
+  );
+
     fetch('http://swapi.co/api/films/')
       .then(response => response.json())
       .then(filmObj => filmCleaner(filmObj))
@@ -56,12 +57,13 @@ class App extends Component {
       .then(vehicleObj => vehicleCleaner(vehicleObj))
       .catch(() => { console.log('vehicle error'); },
     );
+
     return Promise.all([people, planets, vehicles, scroll]).catch(() => console.log('Promise All Error'));
   }
 
   handleClick(category) {
     this.setState({
-      category: category,
+      category,
     });
   }
 
@@ -69,13 +71,11 @@ class App extends Component {
     const newFavorites = [...this.state.favorites];
     if (!newFavorites.length) {
       newFavorites.push(card);
+    } else if (newFavorites.includes(card)) {
+      const index = newFavorites.indexOf(card);
+      newFavorites.splice(index, 1);
     } else {
-      if (newFavorites.includes(card)) {
-        const index = newFavorites.indexOf(card);
-        newFavorites.splice(index, 1);
-      } else {
-        newFavorites.push(card);
-      }
+      newFavorites.push(card);
     }
     this.setState({ favorites: newFavorites });
   }
