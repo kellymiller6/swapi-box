@@ -13,7 +13,7 @@ describe('peopleCleaner tests', () => {
 
   test('peopleCleaner returns 2 people objects', () => {
     const cleanData = peopleCleaner(data)
-    expect(Object.keys(cleanData).length).toEqual(2)
+    expect(Object.keys(cleanData).length).toEqual(10)
   })
 
   test('peopleCleaner returns Luke Skywalker as first key', () => {

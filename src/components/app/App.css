@@ -1,11 +1,6 @@
 .App {
   text-align: center;
-  background-color: #38AECC;
   display: flex;
-  font-family: 'Oswald', sans-serif;
-  background-image: url('https://nerdsonearth.com/wp-content/uploads/2015/08/Star-Wars-VII-Force-Awakens-Teaser-2-Star-Destroyer-Jakku.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
   color: black;
 }
 
@@ -13,11 +8,12 @@ h1 {
   font-size: 4em;
 }
 .scroll-wrapper {
+  font-family: 'Oswald', sans-serif;
   max-width: 25%;
+  min-height: 100%;
   display: flex;
   justify-content: center;
-  padding: 40px;
-  margin: auto 0;
+  padding: 100px 40px;
   font-size: -webkit-xxx-large;
   background-image: url('./background.jpg');
   background-repeat: no-repeat;
@@ -27,4 +23,11 @@ h1 {
 
 .main-wrapper {
   min-width: 75%;
+  background-image: url('https://nerdsonearth.com/wp-content/uploads/2015/08/Star-Wars-VII-Force-Awakens-Teaser-2-Star-Destroyer-Jakku.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main-wrapper h1 {
+  font-family: 'Oswald', sans-serif;
 }

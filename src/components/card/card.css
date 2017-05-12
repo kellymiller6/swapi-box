@@ -1,29 +1,29 @@
 .card{
   border: 1px black solid;
-  min-height: 500px;
+  min-height: 300px;
+  max-height: 800px;
   width: 300px;
   margin: 20px;
-  padding: 5px;
+  padding: 20px;
   background-color: #dbc3a3;
   color: #49311c;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
 }
 
 .favorite {
   max-width: 33%;
   text-align: center;
   margin: auto;
-  margin-top: 5px;
+  margin-top: 20px;
+
 }
 
 .selected {
   background-color: black;
   color: yellow;
-}
-
-.selected button {
-  background-color: yellow;
-  color: black;
 }
