@@ -125,7 +125,7 @@ describe('App handleClick function', () => {
     expect(wrapper.state('category')).toEqual('people');
   });
 
-  it('should change lastClicked state to people when people button is clicked', () => {
+  it('should change lastClicked state to planets when planets button is clicked', () => {
     const wrapper = mount(<App />);
     const peopleButton = wrapper.find('.plnt-btn');
     peopleButton.simulate('click');
@@ -133,7 +133,7 @@ describe('App handleClick function', () => {
     expect(wrapper.state('category')).toEqual('planets');
   });
 
-  it('should change lastClicked state to people when people button is clicked', () => {
+  it('should change lastClicked state to vehicles when vehicles button is clicked', () => {
     const wrapper = mount(<App />);
     const peopleButton = wrapper.find('.veh-btn');
     peopleButton.simulate('click');
@@ -141,7 +141,7 @@ describe('App handleClick function', () => {
     expect(wrapper.state('category')).toEqual('vehicles');
   });
 
-  it('should change lastClicked state to people when people button is clicked', () => {
+  it('should change lastClicked state to fav when favorite button is clicked', () => {
     const wrapper = mount(<App />);
     const peopleButton = wrapper.find('.fav-btn');
     peopleButton.simulate('click');
