@@ -21,9 +21,9 @@ export default Button;
 
 Button.propTypes = {
   handleClick: PropTypes.func,
-  people: PropTypes.string,
-  planets: PropTypes.string,
-  vehicles: PropTypes.string,
+  people: PropTypes.object,
+  planets: PropTypes.object,
+  vehicles: PropTypes.object,
   category: PropTypes.string,
   favorites: PropTypes.array,
 };
