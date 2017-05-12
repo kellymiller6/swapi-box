@@ -27,3 +27,12 @@
   background-color: black;
   color: yellow;
 }
+
+.selected .favorite {
+  background-color: yellow;
+  color: black;
+}
+
+.favorite:hover {
+  opacity: .5;
+}

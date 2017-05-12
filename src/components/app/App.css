@@ -13,6 +13,7 @@ h1 {
   min-height: 100%;
   display: flex;
   justify-content: center;
+  align-content: center;
   padding: 100px 40px;
   font-size: -webkit-xxx-large;
   background-image: url('./background.jpg');
@@ -30,4 +31,21 @@ h1 {
 
 .main-wrapper h1 {
   font-family: 'Oswald', sans-serif;
+}
+
+@media screen and (max-width: 950px) {
+  .App {
+    flex-direction: column-reverse;
+  }
+
+  .scroll-wrapper {
+    min-width: 100%;
+    min-height: 25%;
+    font-size: x-large;
+  }
+
+  .main-wrapper {
+    min-width: 100%;
+    min-height: 75%;
+  }
 }

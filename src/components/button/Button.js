@@ -11,7 +11,7 @@ const Button = ({ handleClick, people, planets, vehicles, category, favorites })
 
       <button className='veh-btn' onClick={() => handleClick('vehicles')}>vehicles</button>
 
-      <button className='fav-btn' onClick={() => handleClick('fav')}>View favorites </button>
+      <button className='fav-btn' onClick={() => handleClick('fav')}>View favorites: {favorites.length} </button>
 
     </div>
   );
