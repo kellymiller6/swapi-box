@@ -13,11 +13,11 @@ describe('planetCleaner tests', () => {
 
   test('planetCleaner returns 2 planet objects', () => {
     const cleanData = planetCleaner(data)
-    expect(Object.keys(cleanData).length).toEqual(2)
+    expect(Object.keys(cleanData).length).toEqual(10)
   })
 
   test('planetCleaner returns Tatooine as first key', () => {
     const cleanData = planetCleaner(data)
-    expect(Object.keys(cleanData)[0]).toEqual('Tatooine')
+    expect(Object.keys(cleanData)[0]).toEqual("Alderaan")
   })
 })

@@ -9,12 +9,12 @@ const PeopleCard = ({id, personObject, name, homeworld, species, population, han
 let favClass = favoriteClass(name, favorites);
 console.log(favClass);
   return (
-    <div id={`${id}`} className={`card people-card ${favClass}`}>
+    <div  className={`card people-card ${favClass}`}>
       <h3>{name}</h3>
       <p>Species: {species}</p>
       <p>Homeworld: {homeworld}</p>
       <p>Population: {population}</p>
-      <button className='favorite'
+      <button id={`${id}`}className='favorite'
         onClick={(e) => handleFavorite(personObject)}>
         Favorite
       </button>
