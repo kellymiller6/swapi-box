@@ -6,7 +6,7 @@ import peopleCleaner from '../../helpers/peopleCleaner';
 import planetCleaner from '../../helpers/planetCleaner';
 import vehicleCleaner from '../../helpers/vehicleCleaner';
 import filmCleaner from '../../helpers/filmCleaner';
-import ScrollCard from '../card/ScrollCard'
+import ScrollCard from '../card/ScrollCard';
 
 
 class App extends Component {
@@ -19,61 +19,65 @@ class App extends Component {
       vehicles: {},
       scroll: [],
       toDisplay: {},
-      favorites: []
-    }
+      favorites: [],
+    };
   }
 
-
   componentDidMount() {
-    this.createPromise().then((array) => this.setState({
+    this.createPromise().then(array => this.setState({
       people: array[0],
       planets: array[1],
       vehicles: array[2],
-    }));
+    }),
+  );
+
     fetch('http://swapi.co/api/films/')
-      .then((response) => response.json())
-      .then((filmObj) => filmCleaner(filmObj))
-      .then((scrolls) => this.setState({scroll: scrolls}))
-      .catch(() => {console.log('scroll error');})
+      .then(response => response.json())
+      .then(filmObj => filmCleaner(filmObj))
+      .then(scrolls => this.setState({ scroll: scrolls }))
+      .catch(() => { console.log('scroll error'); },
+    );
   }
 
-  createPromise(){
+  createPromise() {
     const people = fetch('http://swapi.co/api/people/')
-      .then((response) => response.json())
-      .then((peopleObj) => peopleCleaner(peopleObj))
-      .catch(() => {console.log('people error')})
+      .then(response => response.json())
+      .then(peopleObj => peopleCleaner(peopleObj))
+      .catch(() => { console.log('people error'); },
+    );
 
     const planets = fetch('http://swapi.co/api/planets/')
-      .then((response) => response.json())
-      .then((planetObj) => planetCleaner(planetObj))
-      .catch(() => {console.log('planet error');})
+      .then(response => response.json())
+      .then(planetObj => planetCleaner(planetObj))
+      .catch(() => { console.log('planet error'); },
+    );
 
     const vehicles = fetch('http://swapi.co/api/vehicles/')
-      .then((response) => response.json())
-      .then((vehicleObj) => vehicleCleaner(vehicleObj))
-      .catch(() => {console.log('vehicle error');})
-    return Promise.all([people, planets, vehicles, scroll]).catch(() => console.log('Promise All Error'))
+      .then(response => response.json())
+      .then(vehicleObj => vehicleCleaner(vehicleObj))
+      .catch(() => { console.log('vehicle error'); },
+    );
+
+    return Promise.all([people, planets, vehicles, scroll]).catch(() => console.log('Promise All Error'));
   }
 
-  handleClick(category){
+  handleClick(category) {
     this.setState({
-      category: category,
-    })
+      category,
+    });
   }
 
-  toggleFavorites(card){
-    const newFavorites = [...this.state.favorites]
-    if(!newFavorites.length) {
-      newFavorites.push(card)
+  toggleFavorites(card) {
+    const newFavorites = [...this.state.favorites];
+    if (!newFavorites.length) {
+      newFavorites.push(card);
+    } else if (newFavorites.includes(card)) {
+      const index = newFavorites.indexOf(card);
+      newFavorites.splice(index, 1);
     } else {
-      if(newFavorites.includes(card)){
-        const index = newFavorites.indexOf(card);
-        newFavorites.splice(index, 1)
-      } else {
-        newFavorites.push(card)
-      }
+      newFavorites.push(card);
     }
-    this.setState({favorites : newFavorites})
+    this.setState({ favorites: newFavorites });
   }
 
   render() {
@@ -84,7 +88,7 @@ class App extends Component {
         </aside>
         <section className='main-wrapper'>
           <h1> SWAPI-Box </h1>
-          <Button handleClick={(category) => {this.handleClick(category)}}
+          <Button handleClick={(category) => { this.handleClick(category); }}
             people={this.state.people}
             planets={this.state.planets}
             vehicles={this.state.vehicles}

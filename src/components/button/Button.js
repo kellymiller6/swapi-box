@@ -1,9 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import './button.css';
 
-const Button= ({ handleClick, people, planets, vehicles, category, favorites }) => {
-  return (
+const Button = ({ handleClick, people, planets, vehicles, category, favorites }) => (
     <div className='buttons'>
 
       <button className='ppl-btn' onClick={() => handleClick('people')}>people</button>
@@ -15,8 +14,7 @@ const Button= ({ handleClick, people, planets, vehicles, category, favorites }) 
       <button className='fav-btn' onClick={() => handleClick('fav')}>View favorites </button>
 
     </div>
-  )
-}
+  );
 
 export default Button;
 
@@ -27,5 +25,5 @@ Button.propTypes = {
   planets: PropTypes.string,
   vehicles: PropTypes.string,
   category: PropTypes.string,
-  favorites: PropTypes.array
-}
+  favorites: PropTypes.array,
+};
