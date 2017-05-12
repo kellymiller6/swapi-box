@@ -13,7 +13,7 @@ describe('VehicleCard Tests', () => {
         handleFavorite={'handleFavorite'}
         favorites={[]}
         vehicleObject={{}}
-        />)
+                        />)
     })
 
     test('vehicle card generates two cards', () => {

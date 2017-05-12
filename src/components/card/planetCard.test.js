@@ -14,7 +14,7 @@ describe('PlanetCard Tests', ()=>{
       handleFavorite={'handleFavorite'}
       favorites={[]}
       planetObject={{}}
-      />)
+                      />)
 
   })
 
