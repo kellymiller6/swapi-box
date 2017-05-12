@@ -13,7 +13,7 @@ const planetCleaner = (data) => {
     return acc;
   }, {})
 
-  const residents = Object.keys(planets).map((planet) => {
+  Object.keys(planets).map((planet) => {
     planets[planet].residents = []
     planets[planet].residentUrl.forEach(resident => {
       fetch(resident)
@@ -22,7 +22,8 @@ const planetCleaner = (data) => {
         if(resident === people.url) {
           planets[planet].residents.push(people.name)
         }
-    })
+      })
+      .catch(() => {console.log('planet cleaner resident error');})
     })
   })
   return planets;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './card.css';
 import PropTypes from 'prop-types';
 import favoriteClass from '../../helpers/favoriteClass';

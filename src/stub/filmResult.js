@@ -1,4 +1,5 @@
-export default [`It is a period of civil war.
+export default
+    [`It is a period of civil war.
   Rebel spaceships, striking
   from a hidden base, have won
   their first victory against
@@ -18,7 +19,7 @@ export default [`It is a period of civil war.
   starship, custodian of the
   stolen plans that can save her
   people and restore
-  freedom to the galaxy....`,`There is unrest in the Galactic
+  freedom to the galaxy....`, `There is unrest in the Galactic
   Senate. Several thousand solar
   systems have declared their
   intentions to leave the Republic.
@@ -36,7 +37,7 @@ export default [`It is a period of civil war.
   on the critical issue of creating
   an ARMY OF THE REPUBLIC
   to assist the overwhelmed
-  Jedi....`,`Turmoil has engulfed the
+  Jedi....`, `Turmoil has engulfed the
   Galactic Republic. The taxation
   of trade routes to outlying star
   systems is in dispute.
@@ -55,7 +56,7 @@ export default [`It is a period of civil war.
   secretly dispatched two Jedi
   Knights, the guardians of
   peace and justice in the
-  galaxy, to settle the conflict....`,`War! The Republic is crumbling
+  galaxy, to settle the conflict....`, `War! The Republic is crumbling
   under attacks by the ruthless
   Sith Lord, Count Dooku.
   There are heroes on both sides.
@@ -73,7 +74,7 @@ export default [`It is a period of civil war.
   capital with their valuable
   hostage, two Jedi Knights lead a
   desperate mission to rescue the
-  captive Chancellor....`,`Luke Skywalker has returned to
+  captive Chancellor....`, `Luke Skywalker has returned to
   his home planet of Tatooine in
   an attempt to rescue his
   friend Han Solo from the
@@ -91,7 +92,7 @@ export default [`It is a period of civil war.
   weapon will spell certain doom
   for the small band of rebels
   struggling to restore freedom
-  to the galaxy...`,`It is a dark time for the
+  to the galaxy...`, `It is a dark time for the
   Rebellion. Although the Death
   Star has been destroyed,
   Imperial troops have driven the
@@ -110,7 +111,7 @@ export default [`It is a period of civil war.
   obsessed with finding young
   Skywalker, has dispatched
   thousands of remote probes into
-  the far reaches of space....`,`Luke Skywalker has vanished.
+  the far reaches of space....`, `Luke Skywalker has vanished.
   In his absence, the sinister
   FIRST ORDER has risen from
   the ashes of the Empire

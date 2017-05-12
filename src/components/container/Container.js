@@ -114,11 +114,10 @@ export default Container;
 
 
 Container.propTypes = {
-  // category: PropTypes.string,
+  category: PropTypes.string,
   people: PropTypes.object,
   planets: PropTypes.object,
   vehicles: PropTypes.object,
-  // population: PropTypes.string,
   handleFavorite: PropTypes.func,
   favorites: PropTypes.array
 }

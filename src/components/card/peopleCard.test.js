@@ -13,7 +13,7 @@ describe('PeopleCard Tests', () => {
         handleFavorite={'fn'}
         favorites={[]}
         personObject={{}}
-        />)
+                        />)
     })
 
     test('PeopleCard generates two cards', () => {

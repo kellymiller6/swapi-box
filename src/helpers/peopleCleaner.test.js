@@ -11,9 +11,9 @@ describe('peopleCleaner tests', () => {
     expect(typeof cleanData).toBe('object')
   })
 
-  test('peopleCleaner returns 10 people objects', () => {
+  test('peopleCleaner returns 2 people objects', () => {
     const cleanData = peopleCleaner(data)
-    expect(Object.keys(cleanData).length).toEqual(10)
+    expect(Object.keys(cleanData).length).toEqual(2)
   })
 
   test('peopleCleaner returns Luke Skywalker as first key', () => {

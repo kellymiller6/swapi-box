@@ -14,7 +14,6 @@ class App extends Component {
     super();
     this.state = {
       category: '',
-      categoryData: {},
       people: {},
       planets: {},
       vehicles: {},
@@ -31,11 +30,11 @@ class App extends Component {
       planets: array[1],
       vehicles: array[2],
     }));
-    const scroll = fetch('http://swapi.co/api/films/')
-    .then((response) => response.json())
-    .then((filmObj) => filmCleaner(filmObj))
-    .then((scrolls) => this.setState({scroll: scrolls}))
-    .catch(() => {console.log('scroll error');})
+    fetch('http://swapi.co/api/films/')
+      .then((response) => response.json())
+      .then((filmObj) => filmCleaner(filmObj))
+      .then((scrolls) => this.setState({scroll: scrolls}))
+      .catch(() => {console.log('scroll error');})
   }
 
   createPromise(){
@@ -43,10 +42,12 @@ class App extends Component {
       .then((response) => response.json())
       .then((peopleObj) => peopleCleaner(peopleObj))
       .catch(() => {console.log('people error')})
+
     const planets = fetch('http://swapi.co/api/planets/')
       .then((response) => response.json())
       .then((planetObj) => planetCleaner(planetObj))
       .catch(() => {console.log('planet error');})
+
     const vehicles = fetch('http://swapi.co/api/vehicles/')
       .then((response) => response.json())
       .then((vehicleObj) => vehicleCleaner(vehicleObj))

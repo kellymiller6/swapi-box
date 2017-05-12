@@ -12,7 +12,7 @@ const peopleCleaner = (data) => {
     return acc;
   }, {})
 
-  const planets = Object.keys(people).map((person) => {
+  Object.keys(people).map((person) => {
     fetch(people[person].homeworldUrl)
     .then((response) => response.json())
     .then((planet) => {
@@ -22,9 +22,10 @@ const peopleCleaner = (data) => {
         }
       }
     )
+    .catch(() => {console.log('people cleaner planet error');})
   })
 
-  const species = Object.keys(people).map((person) => {
+  Object.keys(people).map((person) => {
     fetch(people[person].speciesUrl)
     .then((response) => response.json())
     .then((species) => {
@@ -33,8 +34,9 @@ const peopleCleaner = (data) => {
         }
       }
     )
+    .catch(() => {console.log('people cleaner speices error');})
   })
-  
+
 return people;
 }
 

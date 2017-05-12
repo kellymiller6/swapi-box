@@ -27,7 +27,7 @@ PlanetCard.propTypes = {
   planetObject: PropTypes.object,
   name: PropTypes.string,
   population: PropTypes.string,
-  // residents: PropTypes.string,
+  residents: PropTypes.array,
   terrain: PropTypes.string,
   climate: PropTypes.string,
   handleFavorite: PropTypes.func,
