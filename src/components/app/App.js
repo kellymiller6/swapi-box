@@ -31,7 +31,7 @@ class App extends Component {
     }),
   );
 
-    fetch('http://swapi.co/api/films/')
+    fetch('https://swapi.co/api/films/')
       .then(response => response.json())
       .then(filmObj => filmCleaner(filmObj))
       .then(scrolls => this.setState({ scroll: scrolls }))
@@ -40,19 +40,19 @@ class App extends Component {
   }
 
   createPromise() {
-    const people = fetch('http://swapi.co/api/people/')
+    const people = fetch('https://swapi.co/api/people/')
       .then(response => response.json())
       .then(peopleObj => peopleCleaner(peopleObj))
       .catch(() => { console.log('people error'); },
     );
 
-    const planets = fetch('http://swapi.co/api/planets/')
+    const planets = fetch('https://swapi.co/api/planets/')
       .then(response => response.json())
       .then(planetObj => planetCleaner(planetObj))
       .catch(() => { console.log('planet error'); },
     );
 
-    const vehicles = fetch('http://swapi.co/api/vehicles/')
+    const vehicles = fetch('https://swapi.co/api/vehicles/')
       .then(response => response.json())
       .then(vehicleObj => vehicleCleaner(vehicleObj))
       .catch(() => { console.log('vehicle error'); },
